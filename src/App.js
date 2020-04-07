@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { appStyles } from './styleObjects/App';
+import { Grid, Button, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
+import { PSQLTable } from './PSQLTable';
+
+const useStyles = makeStyles(appStyles);
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid className={classes.container}>
+      <Typography variant='h2' className={classes.mainTitle}>
+        PSQL DB to Html Format
+      </Typography>
+      <PSQLTable>
+        
+      </PSQLTable>
+      <Button variant='contained'>
+        Click me
+      </Button>
+      <Typography>
+        Hi I am Ambrose
+      </Typography>
+    </Grid>
   );
 }
 
